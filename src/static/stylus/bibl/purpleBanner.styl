@@ -1,0 +1,162 @@
+.purpleBanner
+  display flex
+  flex-direction column
+  align-items center
+  padding-bottom 132px
+
+  & .banner_box
+    overflow hidden
+    background linear-gradient(98.59deg, #9E7AC1 0%, #645E9D 100%)
+
+    &__item
+      z-index 1
+      position absolute
+      top 50%
+      right 20%
+      transform translateY(-50%)
+      max-width 350px
+      color #fff
+
+      &>h4
+        color #fff
+        margin-bottom 20px
+
+      &>a
+        display flex
+        width fit-content
+        border-radius 4px
+        background rgba(255, 255, 255, 0.12)
+        font-weight bold
+        padding 18px 52px
+        margin-top 44px
+
+  &_abstract
+    position absolute
+    height 100%
+    top 0
+    right 0 
+    object-fit cover
+    z-index 0
+  
+  &_people
+    position absolute
+    height 85%
+    bottom 0
+    left 10%
+    object-fit cover
+    z-index 0
+
+  &_bottom
+    margin-top 80px
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+    max-width 1200px
+
+    &>h5
+      width 100%
+      text-align center
+      margin-bottom 60px
+
+    &__items
+      width 25%
+      background #FFFFFF
+      box-shadow 0px 15px 40px rgba(100, 94, 157, 0.3)
+      border-radius 4px
+      overflow hidden
+      position relative
+      padding 32px
+      margin-right 50px
+
+      &:last-child
+        margin-right 0
+        width calc(50% - 100px)
+
+      &::before
+        content ''
+        display block
+        position absolute
+        width 100%
+        height 8px
+        background #645E9D
+        left 0
+        bottom 0
+
+      &-img
+        position absolute
+        top 32px
+        left 32px
+        width 56px
+        height 56px
+        display flex
+        justify-content center
+        align-items center
+
+        &>img
+          border-radius 50%
+          border 10px solid rgba(100, 94, 157, 0.2)
+
+      &-description
+        color #9A9A9A
+
+      &-title
+        font-weight bold
+        margin 100px 0 20px
+
+
+@media all and (max-width 1440px)
+  .purpleBanner
+    &_people
+      left 0
+
+@media all and (max-width 1280px)
+  .purpleBanner
+    &_bottom
+      &__items
+        width calc(50% - 20px)
+        margin-right 0
+        margin-bottom 20px
+
+        &:last-child
+          width 100%
+
+@media all and (max-width 1024px)
+  .purpleBanner
+    & .banner
+      &_box
+        &__item
+          right 5%
+
+    &_abstract
+      display none
+
+    &_people
+      left -20%
+
+@media all and (max-width 768px)
+  .purpleBanner
+    padding-bottom 92px
+    
+    &_bottom
+      margin-top 60px
+      flex-direction column
+      flex-wrap no-wrap
+
+      &__items
+        width 100%
+        max-width 600px
+
+    &_people
+      height 70%
+
+@media all and (max-width 640px)
+  .purpleBanner
+    padding-bottom 60px
+
+    &_people
+      display none
+
+@media all and (orientation landscape) and (max-width 860px)
+  .purpleBanner
+    padding-top 92px
+    padding-bottom 92px

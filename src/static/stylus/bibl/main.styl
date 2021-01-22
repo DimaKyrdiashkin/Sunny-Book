@@ -1,0 +1,262 @@
+body::-webkit-scrollbar
+  width 12px
+  background transparent
+
+body::-webkit-scrollbar-track
+  background transparent
+  padding 0 6px
+
+body::-webkit-scrollbar-thumb
+  background #B3A5E9
+  border-radius 20px
+
+*
+  margin 0
+  padding 0
+  scroll-behavior smooth
+  box-sizing border-box
+  font-family 'Lato', sans-serif
+  
+h1
+  font-size 2.777777em
+  line-height 140%
+  color #fff
+  font-weight 300
+  height fit-content
+  margin-bottom 100px
+  margin-left 50px
+
+h2
+  font-size 2.666666em
+  line-height 140%
+  font-weight 600
+
+h3
+  font-size 1.666666em
+  line-height 140%
+  font-weight 500
+  font-style italic
+
+h4
+  font-size 1.333333em
+  line-height 140%
+
+h5
+  font-size 1.333333em
+  line-height 140%
+  color #0F0F0F
+
+p
+  font-size 1em
+  line-height 140%
+
+.subP
+  font-size 0.888888em
+  line-height 140%
+
+.smalP
+  font-size 0.666666em
+  line-height 140%
+  color #9A9A9A
+
+.purpleText
+  color #645E9D
+
+.greenText
+  color #66B700
+
+.blue
+  color #3693FF
+
+.greenMark
+  display block
+  width 12px
+  height 12px
+  background #66B700
+  border-radius 50%
+  transform translateY(-20%)
+
+ul
+li
+  list-style none
+  line-height 140%
+
+a
+  outline none
+  text-decoration none
+  color #fff
+  
+.letter
+  font-weight 300
+
+.hidden
+  display none
+
+.show
+  display block
+
+body
+  text-size-adjust 100%
+  font-size 18px
+  color #5C5C5C
+  overflow-x hidden
+
+section:not(.promo)
+  display flex
+  justify-content center
+  width 100%
+  padding-top 90px
+  padding-bottom 110px
+
+.wrapper
+  display flex
+  flex-direction column
+  align-items center
+  position relative
+
+.container
+  max-width 1240px
+  width 100vw
+  position relative
+  margin 0 auto
+
+  &>h4
+    text-align center
+
+.banner
+  padding-top 132px
+  background #fff
+
+  &_box
+    border-radius 12px
+    position relative
+    width calc(100vw - 48px)
+    height 80vh
+    max-height 600px
+
+    &::before
+      content ''
+      display block
+      position absolute
+      bottom 0
+      width 100%
+      height 13px
+      background rgba(255, 255, 255, 0.4)
+      z-index 1
+
+
+.sliderArrow
+  background #fff
+  padding 0 20px
+  display flex
+  justify-content center
+  aign-items center
+  border 1px solid #F1F1F1
+  height 100%
+  position absolute
+  top 0
+  cursor pointer
+
+  &.prevArrow
+    left -12px
+    transform translateX(-100%)
+
+  &.nextArrow
+    right -12px
+    transform translate(100%)
+
+.slick-dots
+  bottom -40px !important
+  display flex !important
+  justify-content center
+  align-items center
+
+  & li button
+    display flex !important
+    justify-content center
+    align-items center
+
+    &::before
+      content '' !important
+      display block
+      background #F1F1F1
+      border-radius 50%
+      width 8px !important
+      height 8px !important
+      opacity 1 !important
+      position unset !important
+  
+  & li.slick-active button:before
+    background #66B700
+
+.slick-dotted.slick-slider
+  margin-bottom 80px !important
+
+@media all and (max-width 1440px)
+  .container
+    max-width 100%
+
+  section
+    padding  0 68px
+
+@media all and (max-width 1280px)
+  body
+    font-size 16px
+
+@media all and (max-width 1024px)
+  .sliderArrow
+    display none !important
+
+@media all and (max-width 920px)
+  .banner_box
+    height 50vh
+    min-height 400px
+
+@media all and (max-width 768px)
+  section
+    padding  0 28px
+
+  .banner
+    padding-top 92px
+
+    &_box
+      height 40vh
+      min-height 350px
+
+@media all and (max-width 640px)
+  .banner_box
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+
+    &__item
+      position unset !important
+      left unset !important
+      right unset !important
+      top unset !important
+      bottom unset !important
+      transform unset !important
+      text-align center
+      
+      &>a
+        display flex
+        margin 36px auto 0
+
+@media all and (max-width 560px)
+  body
+    font-size 14px
+  h1
+    font-size 60px
+  h4
+    font-size 24px
+  h5
+    font-size 20px
+
+  section
+    padding 0 12px
+
+  .banner
+    &_box
+      &__item
+        max-width 90% !important

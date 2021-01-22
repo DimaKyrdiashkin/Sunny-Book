@@ -1,0 +1,55 @@
+.sunnyBook
+  display flex
+  flex-direction column
+  padding-bottom 0 !important
+
+  & h2
+    color #8973DB
+
+  &_top
+    display flex
+    justify-content space-between
+    margin-top 50px
+    margin-bottom 110px
+
+    &>p
+      &:nth-child(1)
+        max-width 400px
+        width 35%
+        margin-right 75px
+
+      &:nth-child(2)
+        max-width 715px
+        width 60%
+
+  &_bottom
+    display flex
+    background linear-gradient(180deg, rgba(244, 244, 244, 0.1) 0%, #F4F4F4 100%)
+
+    & .container
+      display flex
+      alifn-items center
+
+    &__left
+      display flex
+      flex-direction column
+      max-width 550px
+      margin-right 80px
+
+      &>img
+        align-self flex-start
+
+      & .quote
+        margin 50px 0
+        color #222
+
+      & .author
+        font-style normal
+        color #8973DB
+        text-align right
+
+
+    &__right
+      & img
+        height 100%
+         
