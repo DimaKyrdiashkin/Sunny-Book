@@ -1,97 +1,293 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Sunny Book</title>
-  <link rel="stylesheet" href="static/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="logo.ico">
-</head>
-<body>
-  <div class="wrapper">
-    <section class="promo" >       
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sunny Book</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <!-- <script src="./assets/js/a.js"></script> -->
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://modelviewer.dev/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://modelviewer.dev/node_modules/intersection-observer/intersection-observer.js"></script>
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://modelviewer.dev/node_modules/resize-observer-polyfill/dist/ResizeObserver.js"></script>
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script
+      src="https://modelviewer.dev/node_modules/focus-visible/dist/focus-visible.js"
+      defer
+    ></script>
+    <!-- Documentation-specific dependencies: -->
+    <script
+      type="module"
+      src="https://modelviewer.dev/examples/built/dependencies.js"
+    ></script>
+    <script
+      nomodule
+      src="https://modelviewer.dev/examples/built/dependencies-legacy.js"
+    ></script>
+    <!-- Loads <model-viewer> only on modern browsers: -->
+    <script
+      type="module"
+      src="https://modelviewer.dev/node_modules/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <!-- Loads <model-viewer> only on old browsers like IE11: -->
+    <script
+      nomodule
+      src="https://modelviewer.dev/node_modules/@google/model-viewer/dist/model-viewer-legacy.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="./assets/js/analytics.js"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="modal">
+        <p>Номер скопирован</p>
+      </div>
       <header>
-        <ul class="menu">
-          <li><a href="#" class="subP">О книге</a></li>
-          <li><a href="#" class="subP">Как приобрести</a></li>
-          <li><a href="#" class="subP">Отзывы</a></li>
-        </ul>
-        <ul class="link">
-          <li><a href="#" class="subP">
-            <img src="static/svg/Soc/Instagram.svg" alt="">
-          </a></li>
-          <li><a href="#" class="subP">
-            <img src="static/svg/Soc/Mail.svg" alt="">
-          </a></li>
-        </ul>
-      </header>
-      <div class="container">
-        <img src="static/img/Promo/Books.png" alt="">
-        <h1>Не&#160;совсем&#160;блокнот<br>Не&#160;совсем&#160;ежедневник<br>Не&#160;совсем&#160;книга</h1>
-      </div>
-      <img src="static/svg/Promo/AbstractionL.svg" alt="AbstractionL" class="AbstractionL">
-      <img src="static/svg/Promo/AbstractionR.svg" alt="AbstractionR" class="AbstractionR">
-    </section>
-    <section class="sunnyBook" id="sunny_book">
-      <div class="container">
-        <h2>Sunny&#160;Book</h2>
-        <div class="sunnyBook_top">
-          <p>Это пошаговое учебное пособие для каждого человека, cтремящегося к успеху.</p>
-          <p>Sunny Book создан на основании исследований, личного опыта и знаний талантливых, преуспевающих людей и это не просто слова, ведь идейный вдохновитель и создатель Sunny&#160;Book - это основатель экосистемы «Amir&#160;Group», новатор-практик, миллионер, руководитель инвестиционной компании «Amir&#160;Capital» - Марат&#160;Амирович&#160;Мынбаев. </p>
-        </div>
-      </div>
-      <div class="sunnyBook_bottom">
         <div class="container">
-          <div class="sunnyBook_bottom__left">
-            <img src="static/svg/SunnyBook/Quote.svg" alt="Quote">
-            <h3 class="quote">Богатым должен быть каждый.<br>Богатым может быть каждый.<br>Для этого нужно всего лишь узнать несколько упорядоченных алгоритмов…</h3>
-            <h3 class="author">— Марат Мынбаев</h3>
+          <ul class="menu">
+            <li><a href="#about_book" class="subP">О книге</a></li>
+            <li><a href="#how_get" class="subP">Как приобрести</a></li>
+            <li><a href="#comment" class="subP">Отзывы</a></li>
+          </ul>
+          <ul class="link">
+            <li>
+              <a href="#" class="subP">
+                <img src="static/svg/Soc/Instagram.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#" class="subP">
+                <img src="static/svg/Soc/Mail.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+          <div class="mobButton">
+            <span class="burger"></span>
           </div>
-          <div class="sunnyBook_bottom__right">
-            <img src="static/img/SunnyBook/Marat.png" alt="Marat">
+        </div>
+      </header>
+      <section class="promo">
+        <div class="mobalMenu">
+          <img src="static/svg/cross.svg" alt="cross" class="cross" />
+          <ul class="menu">
+            <li><a href="#about_book" class="subP">О книге</a></li>
+            <li><a href="#how_get" class="subP">Как приобрести</a></li>
+            <li><a href="#comment" class="subP">Отзывы</a></li>
+          </ul>
+          <img
+            src="static/svg/Abstraction.svg"
+            alt="abstraction"
+            class="abstraction"
+          />
+          <div class="soc">
+            <a href="#" class="subP">
+              <img src="static/svg/Soc/BInsta.svg" alt="BInsta" />
+            </a>
+            <a href="#" class="subP">
+              <img src="static/svg/Soc/BMail.svg" alt="BMail" />
+            </a>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="aboutBook" id="about_book">
-      <div class="container">
-        <h2>О книге</h2>
-      </div>
-      <div class="bigContainer">
-        <div class="bigContainer_item">
-          <h4>Правильный вектор и бережное сохранение вашего времени</h4>
-          <ul>
-            <li>Sunny Book разделен на 7 логических блоков, в которых в опредленном порядке собраны эффективные упражнения и схемы: 5 разделов учебного пособия, раздел с умным ежедневником на 6 месяцев и заключительный 7-й раздел - подведение итогов. </li>
-            <li>Эти разделы позволяют читателям, выполняя специальные задания, прийти к основам финансовой грамотности, проанализировать себя и свое окружающее, организовать и дисциплинировать себя, сформулировать желания и цели. </li>
-            <li>Используя калькуляторы и схемы Sunny Book, читатель получит важные убеждения, затем знания и навыки в целеполагании и планировании.</li>
-          </ul>
+        <div class="container">
+          <model-viewer
+            src="static/model/book_22.glb"
+            alt="3D"
+            loading="auto"
+            camera-orbit="calc(-30deg + env(window-scroll-y) * -720deg)"
+            exposure="0.5"
+          >
+            <div class="progress-bar hide" slot="progress-bar">
+              <div class="update-bar"></div>
+            </div>
+          </model-viewer>
+          <h1>
+            Не&#160;совсем&#160;блокнот<br />Не&#160;совсем&#160;ежедневник<br />Не&#160;совсем&#160;книга
+          </h1>
         </div>
-        <div class="bigContainer_item">
-          <h4>Повышенный уровень вашей энергии</h4>
-          <ul>
-            <li>Специальные задания Sunny Book, разработанные при участии психологов, вдохновляют, заряжают энергией и помогают настроить фокус на правильные ежедневные действия, качественно улучшающие вашу жизнь.</li>
-          </ul>
+        <img
+          src="static/svg/Promo/AbstractionL.svg"
+          alt="AbstractionL"
+          class="abstractionL"
+        />
+        <img
+          src="static/svg/Promo/AbstractionR.svg"
+          alt="AbstractionR"
+          class="abstractionR"
+        />
+      </section>
+      <section class="sunnyBook" id="sunny_book">
+        <div class="container">
+          <h2>Sunny&#160;Book</h2>
+          <div class="sunnyBook_top">
+            <p>
+              Это пошаговое учебное пособие для каждого человека, cтремящегося к
+              успеху.
+            </p>
+            <p>
+              Sunny Book создан на основании исследований, личного опыта и
+              знаний талантливых, преуспевающих людей и это не просто слова,
+              ведь идейный вдохновитель и создатель Sunny&#160;Book - это
+              основатель экосистемы «Amir&#160;Group», новатор-практик,
+              миллионер, руководитель инвестиционной компании
+              «Amir&#160;Capital» - Марат&#160;Амирович&#160;Мынбаев.
+            </p>
+          </div>
         </div>
-        <div class="bigContainer_item">
-          <h4>Эстетическое удовольствие</h4>
-          <ul>
-            <li>Sunny Book выполнен качественно в полноцвете на плотной финской бумаге, в твердом переплете с матовой поверхностью и содержит 384 страницы полезного контента. Вы получите настоящее удовольствие держа его в руках и заполняя страницу за страницей!</li>
-          </ul>
+        <div class="sunnyBook_bottom">
+          <div class="container">
+            <div class="sunnyBook_bottom__left">
+              <img src="static/svg/SunnyBook/Quote.svg" alt="Quote" />
+              <h3 class="quote">
+                Богатым должен быть каждый.<br />Богатым может быть каждый.<br />Для
+                этого нужно всего лишь узнать несколько упорядоченных
+                алгоритмов…
+              </h3>
+              <h3 class="author">— Марат Мынбаев</h3>
+            </div>
+            <div class="sunnyBook_bottom__right">
+              <img src="static/img/SunnyBook/Marat.png" alt="Marat" />
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="howGet" id="how_get">
-      <div class="container">
-        <h2>Как приобрести</h2>
+      </section>
+      <section class="aboutBook" id="about_book">
+        <img
+          src="static/svg/AboutBook/Abstraction1.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+        <img
+          src="static/svg/AboutBook/Abstraction2.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+        <img
+          src="static/svg/AboutBook/Abstraction3.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+        <img
+          src="static/svg/AboutBook/Abstraction4.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+        <div class="container">
+          <h2>О книге</h2>
+        </div>
+        <div class="bigContainer">
+          <div class="bigContainer_item">
+            <h4>Правильный вектор и бережное сохранение вашего времени</h4>
+            <ul>
+              <li>
+                Sunny Book разделен на 7 логических блоков, в которых в
+                опредленном порядке собраны эффективные упражнения и схемы: 5
+                разделов учебного пособия, раздел с умным ежедневником на 6
+                месяцев и заключительный 7-й раздел - подведение итогов.
+              </li>
+              <li>
+                Эти разделы позволяют читателям, выполняя специальные задания,
+                прийти к основам финансовой грамотности, проанализировать себя и
+                свое окружающее, организовать и дисциплинировать себя,
+                сформулировать желания и цели.
+              </li>
+              <li>
+                Используя калькуляторы и схемы Sunny Book, читатель получит
+                важные убеждения, затем знания и навыки в целеполагании и
+                планировании.
+              </li>
+            </ul>
+          </div>
+          <div class="bigContainer_item">
+            <h4>Повышенный уровень вашей энергии</h4>
+            <ul>
+              <li>
+                Специальные задания Sunny Book, разработанные при участии
+                психологов, вдохновляют, заряжают энергией и помогают настроить
+                фокус на правильные ежедневные действия, качественно улучшающие
+                вашу жизнь.
+              </li>
+            </ul>
+          </div>
+          <div class="bigContainer_item">
+            <h4>Эстетическое удовольствие</h4>
+            <ul>
+              <li>
+                Sunny Book выполнен качественно в полноцвете на плотной финской
+                бумаге, в твердом переплете с матовой поверхностью и содержит
+                384 страницы полезного контента. Вы получите настоящее
+                удовольствие держа его в руках и заполняя страницу за страницей!
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bigContainer">
+          <iframe
+            src="https://www.youtube.com/embed/tMcmbQd14Iw"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+      <section class="howGet" id="how_get">
+        <div class="container">
+          <h2>Как приобрести</h2>
           <div class="howGet_box">
             <div class="howGet_box__header">
               <h2 class="num">01</h2>
             </div>
             <div class="howGet_box__body">
-              <div class="howGet_box__body-left"></div>
-              <div class="howGet_box__body-right"></div>
+              <div class="howGet_box__body-left">
+                <h4>Приобрести за криптовалюту</h4>
+                <p>
+                  Для приобретения Sunny&#160;Book за криптовалюту Вам
+                  необходимо оплатить 16&#160;USDT (розничная цена за 1&#160;шт)
+                  на кошелек нашего проекта и обязательно заполнить анкету,
+                  чтобы мы организовали Вам доставку. Для оплаты рекомендуем
+                  использовать наш криптовалютный кошелек Amir&#160;Wallet.
+                </p>
+              </div>
+              <div class="howGet_box__body-right">
+                <div class="howGet_box__card-wrapper">
+                  <div class="howGet_box__card">
+                    <h4>Шаг 1</h4>
+                    <p>Скачать Amir&#160;Wallet</p>
+                    <a href="https://amir.capital/products#wallet">Перейти</a>
+                  </div>
+                </div>
+                <div class="howGet_box__card-wrapper">
+                  <div class="howGet_box__card" id="copyText">
+                    <h4>Шаг 2</h4>
+                    <p>Скопировать номер кошелька ERC-20</p>
+                    <a href="javascript:;" id="copy">Копировать</a>
+                  </div>
+                </div>
+                <div class="howGet_box__card-wrapper">
+                  <div class="howGet_box__card">
+                    <h4>Шаг 3</h4>
+                    <p>Заполнить анкету</p>
+                    <a
+                      href="https://forms.gle/KPT51C4Ad8RkYibC6"
+                      target="_blanck"
+                      >Перейти</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="howGet_box">
@@ -99,269 +295,265 @@
               <h2 class="num">02</h2>
             </div>
             <div class="howGet_box__body">
-              <div class="howGet_box__body-left"></div>
-              <div class="howGet_box__body-right"></div>
+              <div class="howGet_box__body-left">
+                <h4>Приобрести за Sollar</h4>
+                <p>
+                  Инвесторы Amir&#160;Capital могут приобрести Sunny&#160;Book
+                  на витрине подарков Sollar&#160;Gifts: за&#160;2&#160;Sollar
+                  (розничная цена за 1&#160;шт) и за&#160;15&#160;Sollar
+                  (оптовая цена за 10&#160;шт). 1&#160;Sollar = 8&#160;USDT. Для
+                  покупки Sunny&#160;Book инвестору необходимо накопить,
+                  выиграть в конкурсах или приобрести внутреннюю криптовалюту
+                  компании - Sollar, далее в личном кабинете перейти в раздел
+                  Sollar&#160;Gifts --> Продукция Amir&#160;Capital и оформить
+                  заказ.
+                </p>
+              </div>
+              <div class="howGet_box__body-right">
+                <div class="howGet_box__card-wrapper">
+                  <div class="howGet_box__card">
+                    <p>
+                      Я - инвестор Amir&#160;Capital Перейти в Sollar&#160;Gifts
+                    </p>
+                    <a
+                      href="https://account.amir.capital/front/dashboard/shop/item/280"
+                      target="_blanck"
+                      >Перейти</a
+                    >
+                  </div>
+                </div>
+                <div class="howGet_box__card-wrapper">
+                  <div class="howGet_box__card">
+                    <p>Узнать больше об инвесторовании в Amir&#160;Capital</p>
+                    <a href="https://youtu.be/0OLQFoYeItg" target="_blanck"
+                      >Перейти</a
+                    >
+                  </div>
+                </div>
+                <div class="howGet_box__card-wrapper">
+                  <div class="howGet_box__card">
+                    <p>Стать инвестором Amir&#160;Capital</p>
+                    <a href="https://amir.capital/" target="_blanck">Перейти</a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-      </div>
-    </section>
-    <section class="greenBanner banner">
-      <div class="banner_box">
-        <div class="banner_box__item">
-          <h4>Для кого подходит AmirCell?</h4>
-          <p>Доходная связь AmirCell может подойти каждому, но она не для всех</p>
-          <a target="_blanck" href="https://account.amir.capital/front/auth/sign-up">Регистрация</a>
-        </div>
-        <img src="./static/img/Banner1/Abstraction.png" alt="" class="greenBanner_abstract">
-        <img src="./static/img/Banner1/People.png" alt="" class="greenBanner_people">
-      </div>
-        <ul class="greenBanner_slider" id="greenBanner_slider">
-          <li class="greenBanner_slider__items">
-            <p>Сейчас практически каждый человек задумывается о сохранении капитала и его приумножении мечтает о дополнительном доходе</p>
-          </li>
-          <li class="greenBanner_slider__items">
-            <p>К сожалению, есть немало людей, которым кажется, что расходы на связь это мелочь и на этом не стоит экономить, возможно наша связь не подойдет им</p>
-          </li>
-          <li class="greenBanner_slider__items">
-            <p>Есть и те, у кого действительно не хватает средств даже на собственные базовые потребности, к сожалению, наша связь может быть для них не доступной. Возможно им легче платить всю жизнь, чем один раз задуматься над тем, как найти выход, начать откладывать и получать инвестиционный доход</p>
-          </li>
-          <li class="greenBanner_slider__items">
-            <p>Наша связь доступна для всех, кто точно знает, что сохраненная сумма депозита, доход от этого депозита 6% годовых, и сэкономленные на связи деньги, можно перенаправить на увеличение накоплений и ускорение получения дополнительного дохода</p>
-          </li>
-          <li class="greenBanner_slider__items">
-            <p>Именно поэтому связь AmirCell предназначена и доступна для инвесторов и тех, кто по крайней мере стремится к финансовой независимости и понимает, что нужно сокращать расходы и увеличивать доходы всеми способами</p>
-          </li>
-        </ul>
-    </section>
-    <section class="subscriber">
-      <div class="container">
-        <h4>4 шага, чтобы стать абонентом AmirCell</h4>
-        <div class="subscriber_box">
-          <div class="subscriber_box__items">
-            <div class="subscriber_box__items-imgWrapp">
-              <img src="static/svg/NumInCircle/Num1.svg" alt="" class="subscriber_box__items-num">
-              <img src="static/svg/Subscriber/Download.svg" alt="">
-            </div>
-            <p class="subscriber_box__items-text">Зарегистрироваться в личном кабинете по ссылке <a target="_blanck" href="https://account.amir.capital/front/auth/sign-in" class="greenText">account.amir.capital</a></p>
-          </div>
-          <div class="subscriber_box__items">
-            <div class="subscriber_box__items-imgWrapp">
-              <img src="static/svg/NumInCircle/Num2.svg" alt="" class="subscriber_box__items-num">
-              <img src="static/svg/Subscriber/Deposit.svg" alt="">
-            </div>
-            <p class="subscriber_box__items-text">Пополнить кошелек на сумму выбранного тарифа</p>
-          </div>
-          <div class="subscriber_box__items">
-            <div class="subscriber_box__items-imgWrapp">
-              <img src="static/svg/NumInCircle/Num3.svg" alt="" class="subscriber_box__items-num">
-              <img src="static/svg/Subscriber/Account.svg" alt="">
-            </div>
-            <p class="subscriber_box__items-text">Активировать "Подписку" на связь и интернет без оплаты в личном кабинете</p>
-          </div>
-          <div class="subscriber_box__items">
-            <div class="subscriber_box__items-imgWrapp">
-              <img src="static/svg/NumInCircle/Num4.svg" alt="" class="subscriber_box__items-num">
-              <img src="static/svg/Subscriber/TakeSIM.svg" alt="">
-            </div>
-            <p class="subscriber_box__items-text">Получить sim-карту у дистрибьютора или по почте</p>
           </div>
         </div>
-        <div class="subscriber_contact">
-          <h5>Так же вы можете:</h5>
-          <div class="subscriber_contact__backCall"></div>
-          <div class="subscriber_contact__list">
-            <p><span class="greenMark"></span>Обратиться к дистрибьютору в Вашем городе&#160;<a href="/distributors" class="greenText"> Список дистрибьюторов</a></p>
-            <p><span class="greenMark"></span>Напишите в службу поддержки&#160;<a target="_blanck" href="mailto:service@amircell" class="greenText"> service@amircell</a></p>
-          </div>
+        <div class="howGet_bottom">
+          <img src="static/img/HowGet/Background.png" alt="" />
         </div>
-      </div>
-    </section>
-    <section class="purpleBanner banner">
-      <div class="banner_box">
-        <div class="banner_box__item">
-          <h4>Что еще возможно с AmirCell?</h4>
-          <p>Доходная связь AmirCell может подойти каждому, но она не для всех</p>
-          <a target="_blanck" href="https://account.amir.capital/front/auth/sign-in">Заказать sim-карту</a>
-        </div>
-        <img src="./static/img/Banner2/Abstraction.png" alt="" class="purpleBanner_abstract">
-        <img src="./static/img/Banner2/People.png" alt="" class="purpleBanner_people">
-      </div>
-      <div class="purpleBanner_bottom">
-        <h5>Как работает партнерская программа:</h5>
-        <div class="purpleBanner_bottom__items">
-          <div class="purpleBanner_bottom__items-img">
-            <img src="static/svg/NumInCircle/Num1P.svg" alt="">
-          </div>
-          <p class="purpleBanner_bottom__items-title">Рекрутинг</p>
-          <p class="purpleBanner_bottom__items-description">Вы приглашаете новых пользователей стать абонентом AmirCell</p>
-        </div>
-        <div class="purpleBanner_bottom__items">
-          <div class="purpleBanner_bottom__items-img">
-            <img src="static/svg/NumInCircle/Num2P.svg" alt="">
-          </div>
-          <p class="purpleBanner_bottom__items-title">Возвратный депозит</p>
-          <p class="purpleBanner_bottom__items-description">Пользователь размещает возвратный депозит и активирует sim-карту по выбранному тарифу</p>
-        </div>
-        <div class="purpleBanner_bottom__items">
-          <div class="purpleBanner_bottom__items-img">
-            <img src="static/svg/NumInCircle/Num3P.svg" alt="">
-          </div>
-          <p class="purpleBanner_bottom__items-title">Ежемесячный доход</p>
-          <p class="purpleBanner_bottom__items-description">Пока приглашенный абонент использует связь, Вам ежемесячно начисляется доход в размере 0,12% до 0,63% в месяц от суммы депозитов тех, кого вы пригласили</p>
-        </div>
-      </div>
-    </section>
-    <section class="busines">
-      <div class="container">
-        <h4>Что необходимо, чтобы построить свой Бизнес с AmirCell</h4>
-        <p>Быть абонентом AmirCell по подписке и придерживаться классической стратегии в сфере продаж&#160;- 10-7-4-2 для построение своей абонентской базы</p>
-        <div class="busines_box">
-          <div class="busines_box__items">
-            <h4>10</h4>
-            <p class="subP">Необходимо делать минимум 10&#160;контактов в день, чтобы рассказать об AmirCell</p>
-          </div>
-          <div class="busines_box__items">
-            <h4>7</h4>
-            <p class="subP">7 из 10 человек выслушают&#160;Вас</p>
-          </div>
-          <div class="busines_box__items">
-            <h4>4</h4>
-            <p class="subP">Четверых заинересует данный продукт</p>
-          </div>
-          <div class="busines_box__items">
-            <h4>2</h4>
-            <p class="subP">И всего двое из десяти его преобретут</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="steps">
-      <h4>Какой результат вы можете получить?</h4>
-      <div class="table_wrap">
-        <div class="steps_table">
-            <p></p>
-            <p>1 мес</p>
-            <p>2 мес</p>
-            <p>3 мес</p>
-            <p>...</p>
-            <p class="table_color purpleText">6 мес</p>
-            <p class="table_color purpleText">Доходность</p>
-            <p class="table_color purpleText">Доход</p>
-            <p class="steps_table_bg tabl_left">1 линия</p>
-            <p class="steps_table_bg"><b>50</b><img src="static/svg/PeopleIcon.svg" alt=""></p>
-            <p class="steps_table_bg"><b>100</b><img src="static/svg/PeopleIcon.svg" alt=""></p>
-            <p class="steps_table_bg"><b>150</b><img src="static/svg/PeopleIcon.svg" alt=""></p>
-            <p class="steps_table_bg"><b>...</b></p>
-            <p class="steps_table_bg table_color"><b>300</b><img src="static/svg/PeopleIcon2.svg" alt=""></p>
-            <p class="steps_table_bg table_color"><b>15%</b></p>
-            <p class="steps_table_bg tabl_right table_color"><b>382 USDT</b></p>
-            <p class="steps_table_bg tabl_left">2 линия</p>
-            <p class="steps_table_bg"></p>
-            <p class="steps_table_bg"><b>250</b><img src="static/svg/PeopleIcon.svg" alt=""></p>
-            <p class="steps_table_bg"><b>750</b><img src="static/svg/PeopleIcon.svg" alt=""></p>
-            <p class="steps_table_bg"><b>...</b></p>
-            <p class="steps_table_bg table_color"><b>3 750</b><img src="static/svg/PeopleIcon2.svg" alt=""></p>
-            <p class="steps_table_bg table_color"><b>6%</b></p>
-            <p class="steps_table_bg tabl_right table_color"><b>1 913 USDT</b></p>
-            <p class="steps_table_bg tabl_left">3 линия</p>
-            <p class="steps_table_bg"></p>
-            <p class="steps_table_bg"></p>
-            <p class="steps_table_bg"><b>1 250</b><img src="static/svg/PeopleIcon.svg" alt=""></p>
-            <p class="steps_table_bg"><b>...</b></p>
-            <p class="steps_table_bg table_color"><b>25 000</b><img src="static/svg/PeopleIcon2.svg" alt=""></p>
-            <p class="steps_table_bg table_color"><b>3%</b></p>
-            <p class="steps_table_bg tabl_right table_color"><b>6 375 USDT</b></p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="steps_total">
-          <div class="steps_total__left">
-            <p class="steps_total__left-title">Дополнительный доход от AmirCell через пол года может составить до 8670$ в месяц</p>
-            <p class="steps_total__left-description">Из расчета если Вы привлекаете по 50 активных абонентов в месяц и хотя бы каждый 10-й станет таким же активным партнером как и Вы</p>
-          </div>
-          <div class="steps_total__right">
-            <div class="steps_total__right-img">
-              <img src="static/svg/Sum.svg" alt="">
+      </section>
+      <section class="sunnyBookGift" id="Sunny_Book_as_a_gift">
+        <div class="container">
+          <h2>Sunny book в подарок</h2>
+          <div class="sunnyBookGift_top">
+            <div class="sunnyBookGift_top__left">
+              <p>
+                Примите участие в ПРОМО от инвестиционной компании
+                Amir&#160;Capital:
+              </p>
             </div>
-            <h5>Итого:</h5>
-            <div class="steps_total__box">
-              <p>8 670 USDT/мес.<br>+ 980 Sollar</p>
+            <div class="sunnyBookGift_top__right">
+              <p>
+                Откройте счет Стабильный+ на специальных условиях, получите
+                инвестиционный доход от 127&#160;USDT до 26.776&#160;USDT
+                и&#160;<nobr>книгу-достигатор</nobr> Sunny&#160;Book
+                в&#160;подарок!
+              </p>
+              <p class="subP yellowText">
+                Реализуйте личные и финансовые цели одновременно!
+              </p>
             </div>
           </div>
-      </div>
-    </section>
-    <section class="partner">
-      <div class="container">
-        <h4>4 простых шага, чтобы стать партнером (дистрибьютером) AmirCell</h4>
-        <div class="partner_box">
-          <div class="partner_box__left">
-            <ul>
-              <li>Самому стать абонентом AmirCell</li>
-              <li>В личном кабинете подключить функцию “Стать&#160;партнером”</li>
-              <li>Заказать первую партию sim-карт от&#160;10&#160;штук</li>
-              <li>Приглашать новых абонентов</li>
-            </ul>
-            <a href="/distributors">Найти партнера в своем городе</a>
+          <div class="sunnyBookGift_bottom">
+            <div class="sunnyBookGift_bottom__left">
+              <p>Условия участия в ПРОМО:</p>
+            </div>
+            <div class="sunnyBookGift_bottom__right">
+              <p>Станьте инвестором Amir&#160;Capital</p>
+              <p>
+                В web-версии личного кабинета откройте счет Стабильный+ с
+                капитализацией на выбор:
+              </p>
+              <ul>
+                <li>Счет Стабильный+ от 300&#160;USDT сроком на 1&#160;год;</li>
+                <li>
+                  Счет Стабильный+ от 150&#160;USDT сроком на 2&#160;года;
+                </li>
+                <li>
+                  Счет Стабильный+ от 100&#160;USDT сроком на 3,&#160;5 или
+                  8&#160;лет.
+                </li>
+              </ul>
+              <p>
+                Согласитесь с условиями ПРОМО, поставив галочку "Участвую
+                в&#160;ПРОМО"
+              </p>
+              <p>Оформите бесплатную доставку вашего Sunny&#160;Book!</p>
+              <div class="sunnyBookGift_bottom__box">
+                <div class="sunnyBookGift_bottom__box-card--wrapper">
+                  <div class="sunnyBookGift_bottom__box-card">
+                    <p>
+                      Я - инвестор Amir&#160;Capital Открыть счет Стабильный+
+                    </p>
+                    <a
+                      href="https://account.amir.capital/front/dashboard/create-stable-plus?amount=300&term=1&cap=1&plan=3"
+                      target="_blanck"
+                      >Перейти</a
+                    >
+                  </div>
+                </div>
+                <div class="sunnyBookGift_bottom__box-card--wrapper">
+                  <div class="sunnyBookGift_bottom__box-card">
+                    <p>Узнать больше о&#160;счете Стабильный+</p>
+                    <a href="https://youtu.be/m6WL17x44nE" target="_blanck"
+                      >Перейти</a
+                    >
+                  </div>
+                </div>
+                <div class="sunnyBookGift_bottom__box-card--wrapper">
+                  <div class="sunnyBookGift_bottom__box-card">
+                    <p>Стать инвестором Amir&#160;Capital</p>
+                    <a href="https://amir.capital/" target="_blanck">Перейти</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="partner_box__right">
-            <img src="static/img/Partner/People.png" alt="">
+          <ul class="sunnyBookGift_subList">
+            <li class="subP">
+              * каждый инвестор может открыть не более 10&#160;счетов
+              Стабильный+ по ПРОМО в&#160;год
+            </li>
+            <li class="subP">
+              ** при досрочном закрытии счета Стабильный+ по ПРОМО будет
+              произведено автоматическое списание в размере 16&#160;USDT
+            </li>
+            <li class="subP">
+              *** функционал ПРОМО активен только в web-версии личного кабинета
+            </li>
+          </ul>
+        </div>
+        <img
+          src="static/svg/Gift/Abstraction.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+      </section>
+      <section class="comment" id="comment">
+        <div class="container">
+          <h2>Отзывы</h2>
+          <div class="comment_box" id="commentSlider">
+            <div class="comment_box__item">
+              <iframe
+                src="https://www.youtube.com/embed/tMcmbQd14Iw"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="comment_box__item">
+              <iframe
+                src="https://www.youtube.com/embed/tMcmbQd14Iw"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="comment_box__item">
+              <iframe
+                src="https://www.youtube.com/embed/tMcmbQd14Iw"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="comment_box__item">
+              <iframe
+                src="https://www.youtube.com/embed/tMcmbQd14Iw"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="contact">
-      <div class="container">
-        <div class="contact_box">
-          <div class="contact_box__items">
-            <img src="static/svg/Contact/Voice.svg" alt="">
-            <p>Обратиться к дистрибьютеру<br>в Вашем регионе</p>
-            <div class="contact_box__items-link">
-              <a href="/distributors" class="contact_soc-arrow">Список регионов</a>
-            </div>
+      </section>
+      <section class="quoteBlock">
+        <img
+          src="static/svg/Quote/Abstraction1.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+        <img
+          src="static/svg/Quote/Abstraction2.svg"
+          alt="abstraction"
+          class="abstraction"
+        />
+        <div class="container">
+          <img src="static/svg/Quote/Logo.svg" alt="logo" class="logo" />
+          <div class="quoteBlock_block">
+            <img src="static/svg/Quote/Quote.svg" alt="Quote" />
+            <h3 class="quote">
+              По-настоящему успешен тот, кто сумел сформировать вокруго себя
+              счастливое, богатое и&#160;успешное окружение
+            </h3>
+            <h3 class="author">— Создатели Sunny&#160;Book</h3>
           </div>
-          <div class="contact_box__items">
-            <img src="static/svg/Contact/Email.svg" alt="">
-            <p>Вы можете<br>написать нам</p>
-            <div class="contact_box__items-link">
-              <a target="_blanck" href="mailto:support@amircell.com">support@amircell.com</a>
+          <p>
+            Становитесь частью нашего большого сообщества Sunny&#160;Book!
+            Делитесь результатами и отзывами в социальных сетях, рекомендуйте
+            этот эффективный инструмент друзьям и партнерам. Sunny&#160;Book -
+            лучший подарок для себя и своих близких, кому вы действительно
+            желаете&#160;успеха!
+          </p>
+        </div>
+      </section>
+      <section class="slider">
+        <div class="container">
+          <div class="slider_box" id="slider">
+            <div class="slider_box__item">
+              <img src="static/img/Slider/Anna.jpg" alt="" />
             </div>
-          </div>
-          <div class="contact_box__items">
-            <img src="static/svg/Contact/Headphones.svg" alt="">
-            <p>Заказать<br>обратный звонок</p>
-            <div class="contact_box__items-link">
-              <a class="contact_soc-arrow" onclick="
-					      $('.lt-label').trigger('click')
-					      document.querySelector('.lt-widget-mobile-wrap').classList.remove('lt-widget-hidden');
-					      $('.lt-offline').css('display','block');
-				      ">Заказать</a>
+            <div class="slider_box__item">
+              <img src="static/img/Slider/Anna.jpg" alt="" />
             </div>
-          </div>
-          <div class="contact_box__items">
-            <img src="static/svg/Contact/Download.svg" alt="">
-            <p>Зарегистрироваться в<br>личном кабинете</p>
-            <div class="contact_box__items-link">
-              <a target="_blanck" href="https://account.amir.capital/front/auth/sign-up" class="contact_soc-arrow">account.amir.capital</a>
+            <div class="slider_box__item">
+              <img src="static/img/Slider/Anna.jpg" alt="" />
             </div>
-          </div>
-          <div class="contact_box__items">
-            <img src="static/svg/Contact/Soc.svg" alt="">
-            <p>Мы с соц. Сетях</p>
-            <div class="contact_box__items-link">
-              <a target="_blanck" href="https://www.facebook.com/AmirCelltelecom/" class="contact_soc-arrow">Facebook</a>
-              <a target="_blanck" href="https://vk.com/public200554439" class="contact_soc-arrow">VK</a>
-              <a target="_blanck" href="https://instagram.com/amircell_official?igshid=xmtvnvy6jedu" class="contact_soc-arrow">Instagram</a>
+            <div class="slider_box__item">
+              <img src="static/img/Slider/Anna.jpg" alt="" />
             </div>
-          </div>
-          <div class="contact_box__items">
-            <img src="static/svg/Contact/Chat.svg" alt="">
-            <p>Написать в чат<br>поддержки на сайте</p>
+            <div class="slider_box__item">
+              <img src="static/img/Slider/Anna.jpg" alt="" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-  <script src="static/js/libs.min.js"></script>
-  <script src="static/js/main.js"></script>
-</body>
+      </section>
+      <footer>
+        <div class="container">
+          <ul class="menu">
+            <li><a href="#" class="subP">О книге</a></li>
+            <li><a href="#" class="subP">Как приобрести</a></li>
+            <li><a href="#" class="subP">Отзывы</a></li>
+          </ul>
+          <ul class="link">
+            <li>
+              <a href="#" class="subP">
+                <img src="static/svg/Soc/Instagram.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#" class="subP">
+                <img src="static/svg/Soc/Mail.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="static/js/libs.min.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
 </html>

@@ -7,13 +7,15 @@
   justify-content center
   position relative
 
-  & .AbstractionR
+  & .abstractionR
     position absolute
+    width 22%
     right 0
     bottom 15%
 
-  & .AbstractionL
+  & .abstractionL
     position absolute
+    width 28%
     left 0
     bottom 0
 
@@ -22,7 +24,10 @@
     align-items center
 
     & img
-      margin 75px 0 150px
+    & model-viewer
+      height 95vh
+      width 50vw
+      --poster-color #8973DB
   
   &_slider
     position relative
@@ -66,137 +71,39 @@
   100%
     background transparent
 
-@media all and (max-width 1440px)
-  .promo
-    padding 0
-
-    &_slider
-      & .people
-        right 10%
-
-    &_bottom
-      max-width 100%
-      padding 0 68px
-
-@media all and (max-width 1280px)
-  .promo_main
-    margin-left 10%
-    max-width 350px
-
-  .promo_slider
-    & .abstraction
-      right -30%
-
-    & .people
-      right 0
-
 @media all and (max-width 1024px)
   .promo
-    &_bottom
-      &__box
-        flex-wrap wrap
+    & .container
+      flex-direction column
 
-        &-items
-          width 40%
-          margin-right 10%
-          margin-bottom 72px
+      &>img
+      & model-viewer
+        width 80vw
+        height 70vh
 
-          &:nth-child(2n)
-            margin-right 0
-          
-          &:nth-child(n+2)
-            margin-bottom 0
+    & .abstractionR
+      bottom unset
+      top 25%
 
 @media all and (max-width 768px)
   .promo
-    &_main
-      margin-left 0
-      text-align center
-      
-      &__button
-        margin 0 auto
-
-      &>p
-        margin 12px 0 35px
-
-    &_slider
-      height fit-content
-      max-height unset
-      display flex
-      flex-direction column
-      align-items center
-
-      & .people
-        position unset
-        width fit-content
-        height 40vh
-        object-fit contain
-        margin-top 80px
-        min-height 300px
-
-      & .abstraction
-        height 50vh
-        right 50%
-        transform translateX(50%)
-        min-height 375px
+    & .container
+      & img
+      & model-viewer
+        max-height 500px
 
 @media all and (max-width 560px)
+  h1
+    font-size 24px
+    margin-left 0
+
   .promo
-    &_bottom
-      padding 0 28px
+    & .container
+      & img
+        max-height 300px
 
-      &__box
-        flex-direction column
-        
-        &-items
-          width 100%
-          margin-bottom 48px
-          margin-right 0
-          max-width 350px
+    & .abstractionR
+      display none
 
-          &:nth-child(n+2)
-            margin-bottom 48px
-
-          &:last-child
-            margin-bottom 0
-
-          &--title
-            margin-top 20px
-            margin-bottom 16px
-            font-size 18px
-          
-          & .subP
-            font-size 14px
-
-    &_main
-      &__button
-        &>a
-          padding 14px 40px
-
-    &_slider
-      & .abstraction
-        height 40vh
-        max-height 400px
-        min-height 350px
-    &_link
-      font-size 12px
-
-@media all and (orientation landscape) and (max-width 860px)
-  .promo
-    &_main
-      margin-top 50px
-
-      &>p
-        margin 12px 0 40px
-    
-    &_slider
-      min-height 400px
-  
-    &_bottom
-      &__box
-        &-items
-          margin-bottom 40px
-
-          &--title
-            margin-top 12px
-            margin-bottom 8px
+    & .abstractionL
+      width 80%

@@ -3,16 +3,30 @@ header
   display flex
   justify-content space-between
   align-items center
-  margin 24px auto 0
-  max-width 1240px
+  margin 0 auto
+  padding-top 12px !important
+  padding-bottom 12px !important
+  width 100%
+  background #8973db
+  position sticky
+  top 0
+  z-index 99
+
+  & .container
+    display flex
+    align-items center
+    justify-content space-between
 
   & .menu
     display flex
-    gap 45px
 
     & li
       display flex
       align-items center
+      margin-right 45px
+
+      &:last-child
+        margin-right 0
 
       & a
         padding 15px
@@ -27,15 +41,20 @@ header
   
   & .link
     display flex
-    gap 20px
+    
+    &>li
+      margin-right 20px
+      
+      &:last-child
+        margin-right 0
 
-  & .logoV
-    display none
-
+    & img
+      display block
 
 .mobButton
+  display none
   width 30px
-  height 26px
+  height 30px
   border-radius 4px
   cursor pointer
   padding 5px
@@ -45,7 +64,7 @@ header
   & .burger
     display block
     border-radius 10px
-    background #5C5C5C
+    background #fff
     border-radius 1px
     width 20px
     height 2px
@@ -60,7 +79,7 @@ header
       width 100%
       height 2px
       border-radius 10px
-      background #5C5C5C
+      background #fff
       border-radius 1px
       position absolute
       top -7px
@@ -72,96 +91,37 @@ header
       width 100%
       height 2px
       border-radius 10px
-      background #5C5C5C
+      background #fff
       border-radius 1px
       position absolute
       top 7px
       right 0
       transition .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
 
-.open .burger{
-    transform translateY(-50%) rotate(45deg)
-    transition .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-}
-.open .burger::before{
-    top 0
-    transform rotate(-90deg)
-    transition .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-}
-.open .burger::after{
-    opacity 0
-    transition .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-}
-.mobMenu{
-    display none
-    position fixed
-    background #645E9D
-    box-shadow -7px 30px 34px rgba(0, 0, 0, 0.05)
-    height 100%
-    width 50%
-    min-width 250px
-    top 0
-    right -100%
-    z-index 999
-    padding 140px 29px 0 10%
-    transition .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-}
-.mobMenu.open{
-    right 0
-    transition .5s cubic-bezier(0.445, 0.05, 0.55, 0.95)
-}
-.mobMenu_svg{
-    position absolute
-    bottom 0
-    right 0
-}
-.mobItems{
-    margin-bottom 30px
-    position relative
-}
-.mobItems::after{
-    content ''
-    display block
-    position absolute
-    bottom -4px
-    background linear-gradient(90deg, #fff 0%, #fff0 100%)
-    border-radius 13px
-    width 50%
-    height 2px
-}
-.mobMenu a{
-    color #fff
-}
-
-
-@media all and (max-width 1280px)
+@media all and (max-width 1440px)
   header
-    padding 0 68px
+    padding 0 45px
+    max-width 100%
 
 @media all and (max-width 768px)
   header
-    padding 0 28px
+    & .menu
+      &>li
+        margin-right 20px
+        
+        &:last-child
+          margin-right 0
 
 @media all and (max-width 560px)
-  .singIn
-  .singUp
-    font-size 12px
-
   header
-    padding 0 12px
+  footer
     & .menu
-      & li
-        margin-right 12px
-        
-        & a
-          padding 12px 20px
+      display none !important
 
-    & .logoG
-      display none
-    
-    & .logoV
-      display block
-
-@media all and (orientation landscape) and (max-width 860px)
   header
-    margin 18px auto
+    padding 0 20px
+    & .container
+      padding 0
+
+  .mobButton
+    display block

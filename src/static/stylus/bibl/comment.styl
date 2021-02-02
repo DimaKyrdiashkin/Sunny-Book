@@ -1,0 +1,25 @@
+.comment
+  background #fff
+  
+  & .container
+    & h2 
+      color #8973DB
+      margin-bottom 50px
+
+  &_box
+    &__item
+      display flex !important
+      justify-content center
+      align-items center
+
+      & iframe
+        width calc(550vw / 9)
+        height calc(550vw / 16)
+
+@media all and (max-width 560px)
+  .comment
+    &_box
+      &__item
+        & iframe
+          width calc(750vw / 9)
+          height calc(750vw / 16)

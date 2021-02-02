@@ -23,7 +23,7 @@ h1
   color #fff
   font-weight 300
   height fit-content
-  margin-bottom 100px
+  margin-bottom 150px
   margin-left 50px
 
 h2
@@ -51,7 +51,7 @@ p
   line-height 140%
 
 .subP
-  font-size 0.888888em
+  font-size 0.833333em
   line-height 140%
 
 .smalP
@@ -59,8 +59,8 @@ p
   line-height 140%
   color #9A9A9A
 
-.purpleText
-  color #645E9D
+.yellowText
+  color #F2CB05
 
 .greenText
   color #66B700
@@ -94,7 +94,10 @@ a
 
 .show
   display block
-
+canvas
+  position absolute
+  top 0
+  height 100vh !important
 body
   text-size-adjust 100%
   font-size 18px
@@ -144,119 +147,81 @@ section:not(.promo)
       background rgba(255, 255, 255, 0.4)
       z-index 1
 
-
-.sliderArrow
-  background #fff
-  padding 0 20px
-  display flex
-  justify-content center
-  aign-items center
-  border 1px solid #F1F1F1
-  height 100%
-  position absolute
-  top 0
-  cursor pointer
-
-  &.prevArrow
-    left -12px
-    transform translateX(-100%)
-
-  &.nextArrow
-    right -12px
-    transform translate(100%)
-
 .slick-dots
-  bottom -40px !important
+  bottom -60px !important
   display flex !important
   justify-content center
   align-items center
 
-  & li button
-    display flex !important
-    justify-content center
-    align-items center
+  & li
+    margin-right 25px !important
 
-    &::before
-      content '' !important
-      display block
-      background #F1F1F1
-      border-radius 50%
-      width 8px !important
-      height 8px !important
-      opacity 1 !important
-      position unset !important
+    &:last-child
+      margin-right 0
+
+    & button
+      display flex !important
+      justify-content center
+      align-items center
+      padding 0 !important
+
+      &::before
+        content '' !important
+        display block
+        background #F1F1F1
+        border-radius 50%
+        width 18px !important
+        height 18px !important
+        opacity 1 !important
+        position unset !important
   
   & li.slick-active button:before
-    background #66B700
+    background #8973DB
 
 .slick-dotted.slick-slider
   margin-bottom 80px !important
 
+.slick-arrow
+  display none !important
+
+.slick-slide
+  &:focus
+    outline none
+
 @media all and (max-width 1440px)
   .container
     max-width 100%
-
-  section
-    padding  0 68px
+    padding  0 45px
 
 @media all and (max-width 1280px)
   body
     font-size 16px
 
 @media all and (max-width 1024px)
-  .sliderArrow
-    display none !important
-
-@media all and (max-width 920px)
-  .banner_box
-    height 50vh
-    min-height 400px
+  h1
+    margin-bottom 200px
+  
+  section:not(.promo)
+    padding-top 75px
+    padding-bottom 95px
 
 @media all and (max-width 768px)
-  section
-    padding  0 28px
-
-  .banner
-    padding-top 92px
-
-    &_box
-      height 40vh
-      min-height 350px
-
-@media all and (max-width 640px)
-  .banner_box
-    display flex
-    flex-direction column
-    align-items center
-    justify-content center
-
-    &__item
-      position unset !important
-      left unset !important
-      right unset !important
-      top unset !important
-      bottom unset !important
-      transform unset !important
-      text-align center
-      
-      &>a
-        display flex
-        margin 36px auto 0
+  h1
+    font-size 40px
 
 @media all and (max-width 560px)
   body
     font-size 14px
-  h1
-    font-size 60px
-  h4
+
+  h2
     font-size 24px
-  h5
-    font-size 20px
 
-  section
-    padding 0 12px
+  h4
+    font-size 18px
 
-  .banner
-    &_box
-      &__item
-        max-width 90% !important
+  .container
+    padding 0 20px
+
+  section:not(.promo)
+    padding-top 40px
+    padding-bottom 60px
